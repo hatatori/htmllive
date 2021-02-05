@@ -1,0 +1,93 @@
+<style>
+
+
+
+
+
+	*{
+		transition: 1s;
+		transform-style: preserve-3d;
+	}
+
+	body{
+		margin: 0;
+		padding : 0
+	}
+
+	.flex{
+		display: flex;
+		align-items: stretch;
+		flex: 1 2;
+	}
+
+	.quadrado textarea{
+		resize: none;
+		padding: 10;
+		display: block;
+		width: 25vw;
+		height: 33.33%;
+		outline: none;
+		border: none;
+		/*background-color: #efefef;*/
+		box-shadow:  0px 0px 3px rgba(0,0,0,0.2);
+	}
+
+	#bbloco{
+		height: 100%;
+		width: 100%;
+		height: 100vh%;
+	}
+</style>
+
+<div class="flex" style="height: 100%;width: 100%;">
+
+	<div class="quadrado">
+		<textarea  placeholder="html" id="txt_html" spellcheck="false"></textarea>
+		<textarea  placeholder="css" id="txt_css" spellcheck="false"></textarea>
+		<textarea  placeholder="js" id="txt_js" spellcheck="false"></textarea>
+	</div>
+
+
+	<div id="bbloco">
+		<div>#1</div>
+		<div>#2</div>
+		<div>#3</div>
+	</div>
+
+</div>
+
+<script>
+
+
+	st = document.createElement("style")
+	st.id = "staile"
+	document.head.appendChild(st)
+
+	_jsa = document.createElement("script")
+	_jsa.id = "_js"
+	document.body.appendChild(_jsa)
+
+
+	txt_html.onkeyup=function(e){
+		bbloco.innerHTML = this.value
+	}
+
+	txt_css.onkeyup=function(e){
+		staile.innerHTML = this.value
+	}	
+
+	txt_js.onkeyup=function(e){
+		_js.innerHTML = txt_js.value
+		eval(_js.innerHTML)
+	}
+
+	function atualiza(){
+		// bbloco.innerHTML = txt_html.value
+		// staile.innerHTML = txt_css.value
+		// _js.innerHTML = txt_js.value
+		// eval(_js.innerHTML)
+	}
+
+
+
+</script>
